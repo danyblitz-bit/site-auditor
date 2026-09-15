@@ -197,7 +197,7 @@ def _check_links(soup: BeautifulSoup, base_url: str, result: dict, timeout: int,
 
 def _check_performance(resp: requests.Response, soup: BeautifulSoup, result: dict):
     perf = {}
-    perf["page_size_kb"] = len(resp.content) // 1024
+    perf["page_size_kb"] = round(len(resp.content) / 1024, 1)
     perf["total_images"] = len(soup.find_all("img"))
     perf["total_scripts"] = len(soup.find_all("script"))
     perf["total_stylesheets"] = len(soup.find_all("link", rel="stylesheet"))

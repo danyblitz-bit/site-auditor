@@ -63,7 +63,7 @@ def print_report(result: dict):
         t = Table(title="Performance", show_header=False, padding=(0, 1))
         t.add_column(style="cyan", width=20)
         t.add_column()
-        t.add_row("Page size", f"{perf.get('page_size_kb', 0)} KB")
+        t.add_row("Page size", f"{perf.get('page_size_kb', 0):.1f} KB")
         t.add_row("Scripts", str(perf.get("total_scripts", 0)))
         t.add_row("Stylesheets", str(perf.get("total_stylesheets", 0)))
         t.add_row("Gzip", "Yes" if perf.get("gzip_enabled") else "No")
