@@ -59,7 +59,7 @@ def audit_site(url: str, timeout: int = 15, max_links: int = 50, user_agent: str
 
     soup = BeautifulSoup(resp.text, "html.parser")
     _check_seo(soup, result)
-    _check_links(soup, url, result, timeout, max_links, user_agent)
+    _check_links(soup, resp.url, result, timeout, max_links, user_agent)
     _check_performance(resp, soup, result)
     result["score"] = max(0, result["score"])
     return result
@@ -171,6 +171,14 @@ def _check_links(soup: BeautifulSoup, base_url: str, result: dict, timeout: int,
     for link_url in to_check:
         try:
             r = requests.head(link_url, timeout=timeout, allow_redirects=True, headers={"User-Agent": user_agent})
+            if r.status_code in (405, 501):
+                r = requests.get(
+                    link_url,
+                    timeout=timeout,
+                    allow_redirects=True,
+                    headers={"User-Agent": user_agent},
+                    stream=True,
+                )
             status = r.status_code
         except requests.RequestException:
             status = 0
