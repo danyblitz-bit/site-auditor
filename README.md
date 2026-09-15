@@ -46,6 +46,10 @@ Need a standalone `.exe`? Get the [releases](../../releases/latest) build.
   Score: 75/100 (Grade C)
 ```
 
+## Support the Project
+
+SiteAuditor is free and open source. Like it? Support development with a [pay-what-you-want contribution](https://danyblitz.gumroad.com), or grab the [standalone .exe](https://danyblitz.gumroad.com) if you'd rather not install Python.
+
 ## License
 
 MIT

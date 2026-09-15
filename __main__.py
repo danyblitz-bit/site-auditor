@@ -1,8 +1,14 @@
 """SiteAuditor — analyze a website's health: SEO, performance, broken links."""
 import sys
 import argparse
-from .checker import audit_site
-from .report import print_report, export_csv, export_json
+
+try:
+    from .checker import audit_site
+    from .report import print_report, export_csv, export_json
+except ImportError:
+    # PyInstaller one-file runs this script without a package context.
+    from checker import audit_site
+    from report import print_report, export_csv, export_json
 
 
 def main():
