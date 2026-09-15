@@ -11,6 +11,21 @@ except ImportError:
     from report import print_report, export_csv, export_json
 
 
+def report_to_email(result):
+    import webbrowser
+    from urllib.parse import quote
+
+    body = (
+        f"SiteAuditor ran on {result['url']}\n"
+        f"Score: {result['score']}/100\n\nIssues:\n"
+        + "\n".join(f"- {i}" for i in result["issues"])
+        + "\n\nWarnings:\n"
+        + "\n".join(f"- {w}" for w in result["warnings"])
+    )
+    subject = f"[TOOL-REPORT] site-auditor {result['url']}"
+    webbrowser.open(f"mailto:danyblitz@googlemail.com?subject={quote(subject)}&body={quote(body)}")
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog="site-auditor",
@@ -22,6 +37,7 @@ def main():
     parser.add_argument("--csv", metavar="FILE", help="Export results to CSV")
     parser.add_argument("--json", metavar="FILE", help="Export results to JSON")
     parser.add_argument("--user-agent", default="SiteAuditor/1.0", help="Custom User-Agent string")
+    parser.add_argument("--report", action="store_true", help="Open a pre-filled email to report an issue")
     args = parser.parse_args()
 
     url = args.url
@@ -37,6 +53,9 @@ def main():
     if args.json:
         export_json(result, args.json)
         print(f"\n  JSON exported to {args.json}")
+    if args.report:
+        report_to_email(result)
+        print("\n  Email draft opened — send it and I'll get notified automatically.")
 
     sys.exit(0 if result["score"] >= 70 else 1)
 

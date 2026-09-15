@@ -53,6 +53,24 @@ SiteAuditor is free and open source. Like it?
 - [Buy the DevTools Bundle](https://danyblitz.gumroad.com/l/zjkam) — standalone .exe + 2 extra tools + guide, pay what you want
 - [Buy me a coffee](https://danyblitz.gumroad.com/l/hrvpiu) — one-time support
 
+## Report a bug
+
+Found a bug or something weird? Run:
+
+```bash
+python -m tools.site-auditor https://your-site.com --report
+```
+
+This opens a pre-filled email with your audit data. Send it and I'll get notified automatically.
+
+You can also email **danyblitz@googlemail.com** directly. Use the subject format:
+
+```
+[TOOL-REPORT] site-auditor <what happened>
+```
+
+Attach the log or error output if you have one.
+
 ## License
 
 MIT
