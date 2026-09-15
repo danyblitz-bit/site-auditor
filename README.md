@@ -48,7 +48,10 @@ Need a standalone `.exe`? Get the [releases](../../releases/latest) build.
 
 ## Support the Project
 
-SiteAuditor is free and open source. Like it? Support development with a [pay-what-you-want contribution](https://danyblitz.gumroad.com), or grab the [standalone .exe](https://danyblitz.gumroad.com) if you'd rather not install Python.
+SiteAuditor is free and open source. Like it?
+
+- [Buy the DevTools Bundle](https://danyblitz.gumroad.com/l/zjkam) — standalone .exe + 2 extra tools + guide, pay what you want
+- [Buy me a coffee](https://danyblitz.gumroad.com/l/hrvpiu) — one-time support
 
 ## License
 
