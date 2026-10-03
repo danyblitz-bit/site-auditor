@@ -17,6 +17,18 @@ Most audit tools are slow web apps behind registration walls. SiteAuditor is a s
 - **Exit Code Scoring** — `0` if score >= 70, `1` if the site needs work (perfect for CI)
 - **CSV & JSON Export** — feed results to your own tooling
 
+## Don't want to run it yourself?
+
+SiteAuditor is free and always will be. But the report is only half of the work —
+the other half is knowing which of those findings actually costs you traffic and
+what to change.
+
+That's what I do for €49: I run the audit on your site, read the results, and send
+you a PDF with the problems ranked by impact and the exact fix for each one. Report
+within 24 hours. No subscription, nothing to install.
+
+[**Get your site audited — €49**](https://danyblitz.gumroad.com/l/jsuyla)
+
 ## Install & Run
 
 ```bash
@@ -50,6 +62,7 @@ Need a standalone `.exe`? Get the [releases](../../releases/latest) build.
 
 SiteAuditor is free and open source. Like it?
 
+- [Get your site audited — €49](https://danyblitz.gumroad.com/l/jsuyla) — I run the audit and send you the fixes
 - [Get the DevTools Bundle](https://danyblitz.gumroad.com/l/zjkam) — 2 other tools + guide, pay what you want. Binaries are free here too; the bundle is support
 - [Buy me a coffee](https://danyblitz.gumroad.com/l/hrvpiu) — one-time support
 
