@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "danyblitz-site-auditor"
+version = "1.0.0"
+description = "Lightweight website health checker: SEO, performance and broken links from your terminal."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Danilo Fortunato" }]
+keywords = [
+    "seo",
+    "audit",
+    "website",
+    "performance",
+    "broken-links",
+    "cli",
+    "lighthouse",
+    "website-audit",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Quality Assurance",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "rich>=13.0.0",
+]
+
+[project.urls]
+Homepage = "https://danyblitz-bit.github.io/site-auditor/"
+Repository = "https://github.com/danyblitz-bit/site-auditor"
+"Bug Tracker" = "https://github.com/danyblitz-bit/site-auditor/issues"
+
+[project.scripts]
+siteauditor = "siteauditor.__main__:main"
+
+[tool.setuptools]
+packages = ["siteauditor"]
+
+[tool.setuptools.package-dir]
+siteauditor = "."

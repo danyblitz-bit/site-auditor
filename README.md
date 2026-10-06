@@ -32,11 +32,13 @@ within 24 hours. No subscription, nothing to install.
 ## Install & Run
 
 ```bash
-pip install -r requirements.txt
+pip install danyblitz-site-auditor
 
-python -m tools.site-auditor https://your-site.com
-python -m tools.site-auditor https://your-site.com --json report.json --csv report.csv
+siteauditor https://your-site.com
+siteauditor https://your-site.com --json report.json --csv report.csv
 ```
+
+Prefer running from source? `pip install -r requirements.txt` then `python __main__.py https://your-site.com`.
 
 Need a standalone `.exe`? Get the [releases](../../releases/latest) build.
 
