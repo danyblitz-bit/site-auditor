@@ -73,7 +73,7 @@ SiteAuditor is free and open source. Like it?
 Found a bug or something weird? Run:
 
 ```bash
-python -m tools.site-auditor https://your-site.com --report
+siteauditor https://your-site.com --report
 ```
 
 This opens a pre-filled email with your audit data. Send it and I'll get notified automatically.
